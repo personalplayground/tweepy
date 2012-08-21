@@ -772,6 +772,7 @@ class API(object):
         body.append('--' + BOUNDARY + '--')
         body.append('')
         fp.close()
+        body = map(str, body)
         body = '\r\n'.join(body)
 
         # build headers
