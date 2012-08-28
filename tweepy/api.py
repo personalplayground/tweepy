@@ -765,7 +765,7 @@ class API(object):
         BOUNDARY = 'Tw3ePy'
         body = []
         body.append('--' + BOUNDARY)
-        body.append('Content-Disposition: form-data; name="%s"; filename="%s"' % (name, filename))
+        body.append('Content-Disposition: form-data; name="%s"; filename="%s"' % (name, filename.encode('utf-8')))
         body.append('Content-Type: %s' % file_type)
         body.append('')
         body.append(fp.read())
